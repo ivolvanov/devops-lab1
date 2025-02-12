@@ -9,11 +9,8 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 servers:
-# - url: https://virtserver.swaggerhub.com/devopsassignmentorg/assignment-api/1.0.0
-#   description: SwaggerHub API Auto Mocking
-# - url: https://virtserver.swaggerhub.com/tutorial/1.0.0
-#   description: SwaggerHub API Auto Mocking
-- url: http://localhost:8080/tutorial/1.0.0/ui/
+- url: https://virtserver.swaggerhub.com/tutorial/1.0.0
+  description: SwaggerHub API Auto Mocking
 paths:
   /student/{student_id}:
     get:
@@ -68,7 +65,6 @@ paths:
           description: Invalid ID
         "404":
           description: Not found
-        x-openapi-router-controller: swagger_server.controllers.default_controller
       x-openapi-router-controller: swagger_server.controllers.default_controller
   /student:
     post:

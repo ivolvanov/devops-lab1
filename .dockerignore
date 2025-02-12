@@ -71,3 +71,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Flask build
+dist/
+*.egg-info
