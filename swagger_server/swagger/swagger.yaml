@@ -25,8 +25,8 @@ paths:
         style: simple
         explode: false
         schema:
-          type: string
-          format: uuid
+          type: number
+          format: integer
       responses:
         "200":
           description: Successful operation
@@ -83,9 +83,7 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: uuid
-                x-content-type: application/json
+                $ref: '#/components/schemas/Student'
         "400":
           description: "invalid input, object invalid"
         "409":
