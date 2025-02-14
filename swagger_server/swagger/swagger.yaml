@@ -106,13 +106,13 @@ components:
         grade_records:
           type: array
           items:
-            type: integer
+            $ref: '#/components/schemas/GradeRecord'
       example:
         student_id: 0
         last_name: last_name
         grade_records:
-        - 6
-        - 6
+        - subject_name: Mathematics
+          grade: 9.9
         first_name: first_name
     GradeRecord:
       required:
@@ -124,7 +124,7 @@ components:
           type: string
         grade:
           maximum: 10
-          minimum: 1
+          minimum: 0
           type: number
           format: float
 

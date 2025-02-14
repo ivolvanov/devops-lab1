@@ -1,9 +1,9 @@
 import os
 import tempfile
+import json
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from functools import reduce
-
 
 def setup_mongodb():
     uri = "mongodb://mongo:27017"
@@ -32,8 +32,9 @@ def add(student=None):
     if res:
         return 'already exists', 409
 
-    doc_id = student_db.insert_one(student.to_dict())
-    return student.student_id
+    student_dict = student.to_dict()
+    doc_id = student_db.insert_one(student_dict)
+    return str(student.student_id)
 
 
 def get_by_id(student_id=None, subject=None):
@@ -43,7 +44,8 @@ def get_by_id(student_id=None, subject=None):
         return 'not found', 404
     # Remove the MongoDB ID and return json-serializable object
     del student['_id']
-    return str(student)
+    student_json = json.dumps(student)
+    return student_json
 
 
 def delete(student_id=None):

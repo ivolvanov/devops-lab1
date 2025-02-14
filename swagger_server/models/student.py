@@ -6,6 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
+from swagger_server.models.grade_record import GradeRecord  # noqa: F401,E501
 from swagger_server import util
 
 
@@ -14,7 +15,7 @@ class Student(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, student_id: int=None, first_name: str=None, last_name: str=None, grade_records: List[int]=None):  # noqa: E501
+    def __init__(self, student_id: int=None, first_name: str=None, last_name: str=None, grade_records: List[GradeRecord]=None):  # noqa: E501
         """Student - a model defined in Swagger
 
         :param student_id: The student_id of this Student.  # noqa: E501
@@ -24,13 +25,13 @@ class Student(Model):
         :param last_name: The last_name of this Student.  # noqa: E501
         :type last_name: str
         :param grade_records: The grade_records of this Student.  # noqa: E501
-        :type grade_records: List[int]
+        :type grade_records: List[GradeRecord]
         """
         self.swagger_types = {
             'student_id': int,
             'first_name': str,
             'last_name': str,
-            'grade_records': List[int]
+            'grade_records': List[GradeRecord]
         }
 
         self.attribute_map = {
@@ -123,22 +124,22 @@ class Student(Model):
         self._last_name = last_name
 
     @property
-    def grade_records(self) -> List[int]:
+    def grade_records(self) -> List[GradeRecord]:
         """Gets the grade_records of this Student.
 
 
         :return: The grade_records of this Student.
-        :rtype: List[int]
+        :rtype: List[GradeRecord]
         """
         return self._grade_records
 
     @grade_records.setter
-    def grade_records(self, grade_records: List[int]):
+    def grade_records(self, grade_records: List[GradeRecord]):
         """Sets the grade_records of this Student.
 
 
         :param grade_records: The grade_records of this Student.
-        :type grade_records: List[int]
+        :type grade_records: List[GradeRecord]
         """
 
         self._grade_records = grade_records
