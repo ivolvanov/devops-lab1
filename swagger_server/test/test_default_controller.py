@@ -32,7 +32,7 @@ class TestDefaultController(BaseTestCase):
         deletes a student
         """
         response = self.client.open(
-            '/tutorial/1.0.0/student/{student_id}'.format(student_id=1.2),
+            '/tutorial/1.0.0/student/{student_id}'.format(student_id='student_id_example'),
             method='DELETE')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -43,7 +43,7 @@ class TestDefaultController(BaseTestCase):
         gets student
         """
         response = self.client.open(
-            '/tutorial/1.0.0/student/{student_id}'.format(student_id=1.2),
+            '/tutorial/1.0.0/student/{student_id}'.format(student_id='student_id_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
